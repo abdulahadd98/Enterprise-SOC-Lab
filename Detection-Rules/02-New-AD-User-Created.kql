@@ -1,0 +1,11 @@
+SecurityEvent
+| where TimeGenerated > ago(10m)
+| where Computer == "DC01.corp.local"
+| where EventID == 4720
+| project
+    TimeGenerated,
+    Computer,
+    SubjectAccount,
+    TargetAccount,
+    Activity
+| order by TimeGenerated desc

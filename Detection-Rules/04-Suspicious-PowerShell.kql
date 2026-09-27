@@ -1,0 +1,26 @@
+Event
+| where TimeGenerated > ago(10m)
+| where Computer == "DC01.corp.local"
+| where EventLog == "Microsoft-Windows-Sysmon/Operational"
+| where EventID == 1
+| extend
+    Image = extract(@"Image:\s*(.*?)\s+FileVersion:", 1, RenderedDescription),
+    CommandLine = extract(@"CommandLine:\s*(.*?)\s+CurrentDirectory:", 1, RenderedDescription),
+    User = extract(@"User:\s*(.*?)\s+LogonGuid:", 1, RenderedDescription),
+    ParentImage = extract(@"ParentImage:\s*(.*?)\s+ParentCommandLine:", 1, RenderedDescription)
+| where Image endswith "\\powershell.exe"
+    or Image endswith "\\pwsh.exe"
+| where CommandLine contains "ExecutionPolicy Bypass"
+    or CommandLine contains "-NoProfile"
+    or CommandLine contains "-enc"
+    or CommandLine contains "EncodedCommand"
+    or CommandLine contains "-w hidden"
+    or CommandLine contains "-WindowStyle Hidden"
+| project
+    TimeGenerated,
+    Computer,
+    User,
+    Image,
+    CommandLine,
+    ParentImage
+| order by TimeGenerated desc

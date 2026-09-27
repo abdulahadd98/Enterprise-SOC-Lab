@@ -1,0 +1,251 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Administrator> ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DC01
+   Primary Dns Suffix  . . . . . . . : corp.local
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : corp.local
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
+   Physical Address. . . . . . . . . : 00-0C-29-A5-8B-98
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::7f0b:264a:46b2:f31b%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.207.10(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.207.2
+   DHCPv6 IAID . . . . . . . . . . . : 100666409
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-32-18-4E-59-00-0C-29-A5-8B-98
+   DNS Servers . . . . . . . . . . . : ::1
+                                       192.168.207.10
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+PS C:\Users\Administrator> dcdiag
+
+Directory Server Diagnosis
+
+Performing initial setup:
+   Trying to find home server...
+   Home Server = DC01
+   * Identified AD Forest.
+   Done gathering initial info.
+
+Doing initial required tests
+
+   Testing server: Default-First-Site-Name\DC01
+      Starting test: Connectivity
+         ......................... DC01 passed test Connectivity
+
+Doing primary tests
+
+   Testing server: Default-First-Site-Name\DC01
+      Starting test: Advertising
+         ......................... DC01 passed test Advertising
+      Starting test: FrsEvent
+         ......................... DC01 passed test FrsEvent
+      Starting test: DFSREvent
+         There are warning or error events within the last 24 hours after the SYSVOL has been shared.  Failing SYSVOL
+         replication problems may cause Group Policy problems.
+         ......................... DC01 failed test DFSREvent
+      Starting test: SysVolCheck
+         ......................... DC01 passed test SysVolCheck
+      Starting test: KccEvent
+         A warning event occurred.  EventID: 0x80000BEB
+            Time Generated: 09/25/2026   11:35:34
+            Event String:
+            The directory has been configured to not enforce per-attribute authorization during LDAP add operations. Warning events will be logged, but no requests will be blocked.
+         A warning event occurred.  EventID: 0x80000BEE
+            Time Generated: 09/25/2026   11:35:34
+            Event String:
+            The directory has been configured to allow implicit owner privileges when initially setting or modifying the nTSecurityDescriptor attribute during LDAP add and modify operations. Warning events will be logged, but no requests will be blocked.
+         A warning event occurred.  EventID: 0x80000B46
+            Time Generated: 09/25/2026   11:35:44
+            Event String:
+            The security of this directory server can be significantly enhanced by configuring the server to reject SASL (Negotiate, Kerberos, NTLM, or Digest) LDAP binds that do not request signing (integrity verification) and LDAP simple binds that are performed on a clear text (non-SSL/TLS-encrypted) connection.  Even if no clients are using such binds, configuring the server to reject them will improve the security of this server.
+         A warning event occurred.  EventID: 0x80000BE1
+            Time Generated: 09/25/2026   11:35:44
+            Event String:
+            The security of this directory server can be significantly enhanced by configuring the server to enforce  validation of Channel Binding Tokens received in LDAP bind requests sent over LDAPS connections. Even if  no clients are issuing LDAP bind requests over LDAPS, configuring the server to validate Channel Binding  Tokens will improve the security of this server.
+         ......................... DC01 passed test KccEvent
+      Starting test: KnowsOfRoleHolders
+         ......................... DC01 passed test KnowsOfRoleHolders
+      Starting test: MachineAccount
+         ......................... DC01 passed test MachineAccount
+      Starting test: NCSecDesc
+         ......................... DC01 passed test NCSecDesc
+      Starting test: NetLogons
+         ......................... DC01 passed test NetLogons
+      Starting test: ObjectsReplicated
+         ......................... DC01 passed test ObjectsReplicated
+      Starting test: Replications
+         ......................... DC01 passed test Replications
+      Starting test: RidManager
+         ......................... DC01 passed test RidManager
+      Starting test: Services
+         ......................... DC01 passed test Services
+      Starting test: SystemLog
+         An error event occurred.  EventID: 0x80001778
+            Time Generated: 09/25/2026   11:35:37
+            Event String: The previous system shutdown at 10:26:02 AM on 9/13/2026 was unexpected.
+         An error event occurred.  EventID: 0x00000029
+            Time Generated: 09/25/2026   11:35:25
+            Event String:
+            The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.
+         A warning event occurred.  EventID: 0x000003F6
+            Time Generated: 09/25/2026   11:35:37
+            Event String:
+            Name resolution for the name _ldap._tcp.dc._msdcs.corp.local. timed out after none of the configured DNS servers responded.
+         A warning event occurred.  EventID: 0x000003F6
+            Time Generated: 09/25/2026   11:35:39
+            Event String:
+            Name resolution for the name wpad timed out after none of the configured DNS servers responded.
+         A warning event occurred.  EventID: 0x000727AA
+            Time Generated: 09/25/2026   11:36:04
+            Event String: The WinRM service failed to create the following SPNs: WSMAN/DC01.corp.local; WSMAN/DC01.
+         A warning event occurred.  EventID: 0x0000000C
+            Time Generated: 09/25/2026   11:36:03
+            Event String:
+            Time Provider NtpClient: This machine is configured to use the domain hierarchy to determine its time source, but it is the AD PDC emulator for the domain at the root of the forest, so there is no machine above it in the domain hierarchy to use as a time source. It is recommended that you either configure a reliable time service in the root domain, or manually configure the AD PDC to synchronize with an external time source. Otherwise, this machine will function as the authoritative time source in the domain hierarchy. If an external time source is not configured or used for this computer, you may choose to disable the NtpClient.
+         A warning event occurred.  EventID: 0x80000434
+            Time Generated: 09/25/2026   11:39:25
+            Event String:
+            The reason supplied by user CORP\Administrator for the last unexpected shutdown of this computer is: Other (Unplanned)
+         ......................... DC01 failed test SystemLog
+      Starting test: VerifyReferences
+         ......................... DC01 passed test VerifyReferences
+
+
+   Running partition tests on : ForestDnsZones
+      Starting test: CheckSDRefDom
+         ......................... ForestDnsZones passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... ForestDnsZones passed test CrossRefValidation
+
+   Running partition tests on : DomainDnsZones
+      Starting test: CheckSDRefDom
+         ......................... DomainDnsZones passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... DomainDnsZones passed test CrossRefValidation
+
+   Running partition tests on : Schema
+      Starting test: CheckSDRefDom
+         ......................... Schema passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... Schema passed test CrossRefValidation
+
+   Running partition tests on : Configuration
+      Starting test: CheckSDRefDom
+         ......................... Configuration passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... Configuration passed test CrossRefValidation
+
+   Running partition tests on : corp
+      Starting test: CheckSDRefDom
+         ......................... corp passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... corp passed test CrossRefValidation
+
+   Running enterprise tests on : corp.local
+      Starting test: LocatorCheck
+         ......................... corp.local passed test LocatorCheck
+      Starting test: Intersite
+         ......................... corp.local passed test Intersite
+PS C:\Users\Administrator> dcdiag /test:dns
+
+Directory Server Diagnosis
+
+Performing initial setup:
+   Trying to find home server...
+   Home Server = DC01
+   * Identified AD Forest.
+   Done gathering initial info.
+
+Doing initial required tests
+
+   Testing server: Default-First-Site-Name\DC01
+      Starting test: Connectivity
+         ......................... DC01 passed test Connectivity
+
+Doing primary tests
+
+   Testing server: Default-First-Site-Name\DC01
+
+      Starting test: DNS
+
+         DNS Tests are running and not hung. Please wait a few minutes...
+         ......................... DC01 passed test DNS
+
+   Running partition tests on : ForestDnsZones
+
+   Running partition tests on : DomainDnsZones
+
+   Running partition tests on : Schema
+
+   Running partition tests on : Configuration
+
+   Running partition tests on : corp
+
+   Running enterprise tests on : corp.local
+      Starting test: DNS
+         ......................... corp.local passed test DNS
+PS C:\Users\Administrator> nslookup corp.local
+Server:  UnKnown
+Address:  ::1
+
+Name:    corp.local
+Address:  192.168.207.10
+
+PS C:\Users\Administrator> nltest /dsgetdc:corp.local
+           DC: \\DC01.corp.local
+      Address: \\192.168.207.10
+     Dom Guid: <REDACTED-GUID>
+     Dom Name: corp.local
+  Forest Name: corp.local
+ Dc Site Name: Default-First-Site-Name
+Our Site Name: Default-First-Site-Name
+        Flags: PDC GC DS LDAP KDC TIMESERV GTIMESERV WRITABLE DNS_DC DNS_DOMAIN DNS_FOREST CLOSE_SITE FULL_SECRET WS DS_8 DS_9 DS_10 0x20000
+The command completed successfully
+PS C:\Users\Administrator> Test-NetConnection management.azure.com -Port 443
+
+
+ComputerName     : management.azure.com
+RemoteAddress    : 4.150.240.10
+RemotePort       : 443
+InterfaceAlias   : Ethernet0
+SourceAddress    : 192.168.207.10
+TcpTestSucceeded : True
+
+
+
+PS C:\Users\Administrator> Test-NetConnection login.microsoftonline.com -Port 443
+
+
+ComputerName     : login.microsoftonline.com
+RemoteAddress    : 40.126.17.132
+RemotePort       : 443
+InterfaceAlias   : Ethernet0
+SourceAddress    : 192.168.207.10
+TcpTestSucceeded : True
+
+
+
+PS C:\Users\Administrator> w32tm /query /status
+Leap Indicator: 0(no warning)
+Stratum: 1 (primary reference - syncd by radio clock)
+Precision: -23 (119.209ns per tick)
+Root Delay: 0.0000000s
+Root Dispersion: 10.0000000s
+ReferenceId: 0x4C4F434C (source name:  "LOCL")
+Last Successful Sync Time: 9/25/2026 11:35:57 AM
+Source: Local CMOS Clock
+Poll Interval: 6 (64s)
+
+PS C:\Users\Administrator>

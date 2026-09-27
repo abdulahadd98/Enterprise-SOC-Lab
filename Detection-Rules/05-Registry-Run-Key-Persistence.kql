@@ -1,0 +1,19 @@
+Event
+| where TimeGenerated > ago(10m)
+| where Computer == "DC01.corp.local"
+| where EventLog == "Microsoft-Windows-Sysmon/Operational"
+| where EventID == 13
+| extend
+    Image = extract(@"Image:\s*(.*?)\s+TargetObject:", 1, RenderedDescription),
+    TargetObject = extract(@"TargetObject:\s*(.*?)\s+Details:", 1, RenderedDescription),
+    Details = extract(@"Details:\s*(.*?)\s+User:", 1, RenderedDescription),
+    User = extract(@"User:\s*(.*)$", 1, RenderedDescription)
+| where TargetObject contains @"\Software\Microsoft\Windows\CurrentVersion\Run"
+| project
+    TimeGenerated,
+    Computer,
+    User,
+    Image,
+    TargetObject,
+    Details
+| order by TimeGenerated desc

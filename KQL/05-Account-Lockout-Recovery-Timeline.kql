@@ -1,0 +1,11 @@
+SecurityEvent
+| where TimeGenerated > ago(24h)
+| where Computer == "DC01.corp.local"
+| where TargetAccount contains "test-user"
+| where EventID in (4625, 4740, 4767)
+| summarize
+    Events = count(),
+    FirstSeen = min(TimeGenerated),
+    LastSeen = max(TimeGenerated)
+    by EventID
+| order by EventID asc

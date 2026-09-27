@@ -1,0 +1,11 @@
+SecurityEvent
+| where TimeGenerated > ago(10m)
+| where Computer == "DC01.corp.local"
+| where EventID == 4625
+| summarize
+    FailedAttempts = count(),
+    FirstFailure = min(TimeGenerated),
+    LastFailure = max(TimeGenerated)
+    by TargetAccount, IpAddress
+| where FailedAttempts >= 3
+| order by FailedAttempts desc

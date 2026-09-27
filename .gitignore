@@ -1,0 +1,17 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Never commit secrets
+.env
+*.secret
+*.key
+*.pem
+credentials*
+secrets*
+
+# Local exports that may contain sensitive Azure identifiers
+private/
+raw-screenshots/

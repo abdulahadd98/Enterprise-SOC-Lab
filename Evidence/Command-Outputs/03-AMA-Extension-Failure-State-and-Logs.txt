@@ -1,0 +1,124 @@
+PS C:\Users\Administrator> Get-Content "C:\ProgramData\GuestConfig\extension_logs\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\state.json"
+{"Blocked":false,"EnableEndTelemetrySent":false,"ErrorMsg":"Download/Validation of Extension: Microsoft.Azure.Monitor.AzureMonitorWindowsAgent Failed with error: Failed to download extension: AzureMonitorWindowsAgent Version: 1.45.0.0 Exception message: Failed to download package:Failed to download package to : C:\\ProgramData\\GuestConfig\\downloads\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip Exception: Handshake Failed with host pn.his.arc.azure.com, error code message: certificate verify failed (SSL routines), error code value: 167772294, TLS version: TLSv1.2. Will continue to retry until request times out. Extension has failed to download less than 10 times.","Ext_output_size":0,"ExtensionHash":"CB0E66329B1E32D88359FAD205B7192B8E477B5163CD8DE8EEF94C74B16FF3C7","ExtensionName":"AzureMonitorWindowsAgent","ExtensionState":"FAILED_DOWNLOAD","ExtensionVersion":"1.45.0.0","FailedDownloadCount":1,"IsMultiConfig":false,"MachineId":"<REDACTED-GUID>","MultiConfigName":"","MultiConfigPropertiesHash":"","MultiConfigServiceRequestId":"","OldExtFormat":false,"ProcessingTime":0,"Publisher":"Microsoft.Azure.Monitor","SequenceNumberFinished":-1,"SequenceNumberStarted":-1,"ServiceRequestId":"<REDACTED-GUID>","Type":"AzureMonitorWindowsAgent","jobId":"<REDACTED-GUID>"}
+PS C:\Users\Administrator> Get-Content "C:\ProgramData\GuestConfig\ext_mgr_logs\gc_ext.log" -Tail 120
+[2026-09-26 15:39:37.789] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:38.358] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_worker_process_state operation.
+[2026-09-26 15:39:38.373] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:38.989] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:38.993] [PID 4736] [TID 4788] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Failed to get the vm_resource_id [json.exception.parse_error.101] parse error at 1: syntax error - unexpected end of input; expected '[', '{', or a literal
+[2026-09-26 15:39:39.563] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:39.565] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_worker_process_state operation.
+[2026-09-26 15:39:39.567] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:40.143] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:40.143] [PID 4736] [TID 4788] [METADATA_INFO] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\gc_pullclient\azure_connection_info.cpp:1145] Failed to get the vm location [json.exception.parse_error.101] parse error at 1: syntax error - unexpected end of input; expected '[', '{', or a literal
+[2026-09-26 15:39:40.144] [PID 4736] [TID 4788] [GC_OPERATIONS] [WARNING] [<REDACTED-GUID>] System is shutting down, skipping get_gc_cache operation.
+[2026-09-26 15:39:40.144] [PID 4736] [TID 4788] [METADATA_INFO] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\gc_pullclient\azure_connection_info.cpp:1178] Failed to get the vm subscription ID [json.exception.parse_error.101] parse error at 1: syntax error - unexpected end of input; expected '[', '{', or a literal
+[2026-09-26 15:39:40.157] [PID 4736] [TID 4788] [Pull Client] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\gc_pullclient\dsc_pull_client.cpp:1082] Failed to update extensions Error : Failed to get VM location.
+[2026-09-26 15:39:40.740] [PID 4736] [TID 4788] [DISPATCHER] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\em_dispatcher\em_dispatcher.cpp:420] Failed to finish extension workflow. Error : Failed to get VM location.
+[2026-09-26 15:39:40.745] [PID 4736] [TID 4788] [Timer Manager] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\em_timer\em_timer_manager.cpp:178] Failed to Run extension refresh workflow for 'extension_refresh_timer' Error : Failed to get VM location.
+[2026-09-26 15:39:40.745] [PID 4736] [TID 4788] [TIMER] [INFO] [<REDACTED-GUID>] [End] timer trigger for extension_refresh_timer
+[2026-09-26 15:39:40.747] [PID 4736] [TID 4740] [Timer Manager] [INFO] [<REDACTED-GUID>] Cancelling notification token.
+[2026-09-26 15:39:40.747] [PID 4736] [TID 4740] [Timer Manager] [INFO] [<REDACTED-GUID>] Setting notification agent object to NULL.
+[2026-09-26 15:39:40.747] [PID 4736] [TID 4740] [NotificationAgent] [INFO] [<REDACTED-GUID>] Close opened pipe for notification
+[2026-09-26 15:39:40.757] [PID 4736] [TID 4740] [Timer Manager] [INFO] [<REDACTED-GUID>] Waiting on notification agent task to complete.
+[2026-09-26 15:39:40.758] [PID 4736] [TID 4740] [Timer Manager] [INFO] [<REDACTED-GUID>] Completed cleaning up notification agent.
+[2026-09-26 15:39:41.370] [PID 4736] [TID 4740] [EM_TIMER_OPERATIONS] [INFO] [<REDACTED-GUID>] Timer threads are stopped successfully.
+[2026-09-26 15:39:41.372] [PID 4736] [TID 4740] [CONSISTENCY_OPERATIONS] [INFO] [<REDACTED-GUID>] Deleting consistency operation context.
+[2026-09-26 15:39:41.928] [PID 4736] [TID 4740] [CONSISTENCY_OPERATIONS] [INFO] [<REDACTED-GUID>] Consistency operation context deleted successfully.
+[2026-09-26 15:39:41.934] [PID 4736] [TID 4740] [Windows Service] [INFO] [<REDACTED-GUID>] Attempt to stop GC Service was successfull. Service status is Stopped.
+[2026-09-26 15:39:41.937] [PID 4736] [TID 4740] [Windows Service] [INFO] [<REDACTED-GUID>] Exiting the main thread of a service process attached to the service control manager.
+[2026-09-26 15:39:41.938] [PID 4736] [TID 4768] [Windows Service] [INFO] [<REDACTED-GUID>] Stop signal received
+[2026-09-26 15:42:01.825] [PID 3356] [TID 2044] [GC_OPERATIONS] [INFO] [<REDACTED-GUID>] Agent is waiting for running operations to finish. Current active operation count is 0.
+[2026-09-26 15:42:01.826] [PID 3356] [TID 2044] [GC_OPERATIONS] [INFO] [<REDACTED-GUID>] All the active operations are finished.
+[2026-09-26 15:42:03.909] [PID 4156] [TID 2260] [Windows Service] [INFO] [<REDACTED-GUID>] Successfully set image mitigation policy option for Redirect Guard.
+[2026-09-26 15:42:03.910] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] Started execution of Service Main function.
+[2026-09-26 15:42:03.910] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] Attempting to start GC Service.
+[2026-09-26 15:42:03.910] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] GC Service Status is Pending Start.
+[2026-09-26 15:42:03.911] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] CPU Quota Set to: '5'
+[2026-09-26 15:42:03.911] [PID 4156] [TID 3376] [GC_RESOURCE_CONSTRAINT] [INFO] [<REDACTED-GUID>] Setting CPU percentage cap to: 5
+[2026-09-26 15:42:03.911] [PID 4156] [TID 3376] [GC_RESOURCE_CONSTRAINT] [INFO] [<REDACTED-GUID>] Finished setting cpu cap
+[2026-09-26 15:42:04.426] [PID 4156] [TID 3376] [Timer Manager] [INFO] [<REDACTED-GUID>] Created a timer for 'extension_refresh_timer'
+[2026-09-26 15:42:04.427] [PID 4156] [TID 3376] [Timer Manager] [INFO] [<REDACTED-GUID>] Created a timer for 'extension_execution_timer'
+[2026-09-26 15:42:04.427] [PID 4156] [TID 3376] [Timer Manager] [INFO] [<REDACTED-GUID>] Created a timer for 'extension_reporting_timer'
+[2026-09-26 15:42:04.427] [PID 4156] [TID 3376] [Timer Manager] [INFO] [<REDACTED-GUID>] Created a timer for 'extension_status_monitor_reporting_timer'
+[2026-09-26 15:42:04.429] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] starting metadata feature
+[2026-09-26 15:42:04.429] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] GC Metadata feature flag is set to: 'Disabled'
+[2026-09-26 15:42:04.430] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] GC Metadata is disabled in configuration
+[2026-09-26 15:42:04.430] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] GC Service Status is Running.
+[2026-09-26 15:42:04.431] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] Successfully set PowerShell environment Variable. Value: Azure-ExtensionService
+[2026-09-26 15:42:04.431] [PID 4156] [TID 3376] [Windows Service] [INFO] [<REDACTED-GUID>] Successfully set PowerShell optout environment Variable. Value: false
+[2026-09-26 15:42:04.432] [PID 4156] [TID 1356] [NotificationAgent] [INFO] [<REDACTED-GUID>] Start reading notifications.
+[2026-09-26 15:42:04.434] [PID 4156] [TID 1356] [NotificationAgent] [INFO] [<REDACTED-GUID>] Notifications online
+[2026-09-26 15:42:09.772] [PID 4156] [TID 4352] [DISPATCHER] [INFO] [<REDACTED-GUID>] Created a new instance of extension management engine
+[2026-09-26 15:42:09.772] [PID 4156] [TID 4396] [TIMER] [INFO] [<REDACTED-GUID>] [Start] timer trigger for 'System_Boot_Trigger'
+[2026-09-26 15:42:09.772] [PID 4156] [TID 4396] [Timer Manager] [INFO] [<REDACTED-GUID>] Run boot timer System_Boot_Trigger
+[2026-09-26 15:42:09.773] [PID 4156] [TID 4396] [Timer Manager] [INFO] [<REDACTED-GUID>] Server is ready to accept requests start trigger refresh.
+[2026-09-26 15:42:09.773] [PID 4156] [TID 4396] [EM_EXTENSION_REPORTER_LOGGER] [INFO] [<REDACTED-GUID>] Failed to find report directory: 'C:\ProgramData\GuestConfig\extension_reports'.
+[2026-09-26 15:42:09.773] [PID 4156] [TID 4396] [Timer Manager] [INFO] [<REDACTED-GUID>] Run Get Extensions workflow on restart of service
+[2026-09-26 15:42:09.773] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Initializing pull client.
+[2026-09-26 15:42:09.803] [PID 4156] [TID 4396] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Resouce Id from get_vm_resource_id - subscriptions/<REDACTED-GUID>/resourceGroups/rg-soc-lab/providers/Microsoft.HybridCompute/machines/DC01
+[2026-09-26 15:42:10.375] [PID 4156] [TID 4396] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Getting msi info from public region for vm located in 'centralindia' location.
+[2026-09-26 15:42:10.394] [PID 4156] [TID 4396] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Getting the key for access token from file: C:\ProgramData\AzureConnectedMachineAgent\Tokens\<REDACTED-GUID>.key
+[2026-09-26 15:42:10.987] [PID 4156] [TID 4396] [BOOST_BEAST_WRAPPER] [INFO] [<REDACTED-GUID>] Resolving host: centralindia-gas.guestconfiguration.azure.com
+[2026-09-26 15:42:11.547] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] [GAS IPs: Public IPv4: 172.202.64.10 Public IPv4: 172.202.65.10]
+[2026-09-26 15:42:13.321] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] [GAS IPs: Public IPv4: 172.202.64.10 Public IPv4: 172.202.65.10] invoke_agent_service_request return_code = 200
+[2026-09-26 15:42:13.321] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Received '0' extensions.
+[2026-09-26 15:42:13.321] [PID 4156] [TID 4396] [TIMER] [INFO] [<REDACTED-GUID>] [End] timer trigger for System_Boot_Trigger
+[2026-09-26 15:43:52.495] [PID 4156] [TID 1356] [NotificationAgent] [INFO] [<REDACTED-GUID>] Start notifications callback
+[2026-09-26 15:43:52.505] [PID 4156] [TID 1356] [Timer Manager] [INFO] [<REDACTED-GUID>] Run pull refresh for timer 'TriggeredByNoticationAgent'
+[2026-09-26 15:43:54.271] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] Initializing pull client.
+[2026-09-26 15:44:02.588] [PID 4156] [TID 1356] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Resouce Id from get_vm_resource_id - subscriptions/<REDACTED-GUID>/resourceGroups/rg-soc-lab/providers/Microsoft.HybridCompute/machines/DC01
+[2026-09-26 15:44:03.779] [PID 4156] [TID 1356] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Getting msi info from public region for vm located in 'centralindia' location.
+[2026-09-26 15:44:04.954] [PID 4156] [TID 1356] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Getting the key for access token from file: C:\ProgramData\AzureConnectedMachineAgent\Tokens\<REDACTED-GUID>.key
+[2026-09-26 15:44:05.567] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] [GAS IPs: Public IPv4: 172.202.64.10 Public IPv4: 172.202.65.10]
+[2026-09-26 15:44:07.941] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] [GAS IPs: Public IPv4: 172.202.64.10 Public IPv4: 172.202.65.10] invoke_agent_service_request return_code = 200
+[2026-09-26 15:44:08.535] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] Received '1' extensions.
+[2026-09-26 15:44:09.109] [PID 4156] [TID 1356] [EXTMGR] [WARNING] [<REDACTED-GUID>] state.json file not found at 'C:\ProgramData\GuestConfig\extension_logs\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\state.json'.
+[2026-09-26 15:44:09.134] [PID 4156] [TID 1356] [DISPATCHER] [INFO] [<REDACTED-GUID>] New extension 'AzureMonitorWindowsAgent' - Downloading and validating extension package, validating the token
+[2026-09-26 15:44:09.139] [PID 4156] [TID 1356] [DISPATCHER] [INFO] [<REDACTED-GUID>] The token is not empty.
+[2026-09-26 15:44:12.685] [PID 4156] [TID 1356] [TOKEN_VALIDATOR] [INFO] [<REDACTED-GUID>] Libvalidator can_execute returned: True. Validator check not required
+[2026-09-26 15:44:12.687] [PID 4156] [TID 1356] [TOKEN_VALIDATOR] [INFO] [<REDACTED-GUID>] Token is validated.
+[2026-09-26 15:44:12.691] [PID 4156] [TID 1356] [DISPATCHER] [INFO] [<REDACTED-GUID>] The token has been checked and it is valid
+[2026-09-26 15:44:12.694] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] Downloading and validating extension package for extension : Microsoft.Azure.Monitor.AzureMonitorWindowsAgent
+[2026-09-26 15:44:13.865] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] Delivery Optimization check for extension Microsoft.Azure.Monitor.AzureMonitorWindowsAgent: enabled=false do_profile_present=true os_available=true uri_present=true
+[2026-09-26 15:44:13.866] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] DoProfile for extension Microsoft.Azure.Monitor.AzureMonitorWindowsAgent: package.url=http://azurearc.b.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>?<REDACTED-QUERY> package.catalogId=z_G8uPQJpz9yTWooxQDs0Txq0gyvyKNDSTH7zzMDUd8= package.piecesHashFileUrl=http://azurearc.f.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>/pieceshash package.hashOfHashes=7denV4aELDoNJJxi3ZhxznevAbShDJQTxmzxc8T+vSY= signature.url=http://azurearc.b.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>?<REDACTED-QUERY> signature.catalogId=ol2lIWqEOCCtsDmCcXW4WmCnqVJNFRIzojBkQcmCITM= signature.piecesHashFileUrl=http://azurearc.f.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>/pieceshash signature.hashOfHashes=sGJ+4ob49PjIyq5Eix7ns0UOKKVOtT8pDMaxqB0KZx4=
+[2026-09-26 15:44:13.914] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] VM not in PrivateLink Downloading package from URI: https://pn.his.arc.azure.com/extensions/extensionpackages/microsoft.azure.monitor__azuremonitorwindowsagent/microsoft.azure.monitor__azuremonitorwindowsagent__1.45.0.0.zip.
+[2026-09-26 15:44:13.915] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] Downloading package to C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip location from https://pn.his.arc.azure.com/extensions/extensionpackages/microsoft.azure.monitor__azuremonitorwindowsagent/microsoft.azure.monitor__azuremonitorwindowsagent__1.45.0.0.zip uri.
+[2026-09-26 15:44:22.785] [PID 4156] [TID 1356] [Pull Client] [WARNING] [<REDACTED-GUID>] Retrying download due to handshake failure Failed to download package to : C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip Exception: Handshake Failed with host pn.his.arc.azure.com, error code message: stream truncated, error code value: 1, TLS version: TLSv1.2, attempts left: 1
+[2026-09-26 15:44:25.755] [PID 4156] [TID 1356] [PULL_CLIENT_CERT_HELPER] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\gc_pullclient\pull_client_cert_helper.cpp:224] Windows chain verification failed for host 'pn.his.arc.azure.com': chain status=0x0, policy error=0x2148204815, GetLastError=0
+[2026-09-26 15:44:36.423] [PID 4156] [TID 1356] [Pull Client] [INFO] [<REDACTED-GUID>] Failed to download extension from https://pn.his.arc.azure.com/extensions/extensionpackages/microsoft.azure.monitor__azuremonitorwindowsagent/microsoft.azure.monitor__azuremonitorwindowsagent__1.45.0.0.zip. Exception: Failed to download package:Failed to download package to : C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip Exception: Handshake Failed with host pn.his.arc.azure.com, error code message: certificate verify failed (SSL routines), error code value: 167772294, TLS version: TLSv1.2
+[2026-09-26 15:44:38.829] [PID 4156] [TID 1356] [Pull Client] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\gc_pullclient\dsc_pull_client.cpp:1514] Failed to download/unzip extension package 'Microsoft.Azure.Monitor.AzureMonitorWindowsAgent' dsc_Error : Failed to download extension: AzureMonitorWindowsAgent Version: 1.45.0.0 Exception message: Failed to download package:Failed to download package to : C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip Exception: Handshake Failed with host pn.his.arc.azure.com, error code message: certificate verify failed (SSL routines), error code value: 167772294, TLS version: TLSv1.2
+[2026-09-26 15:44:38.830] [PID 4156] [TID 1356] [DISPATCHER] [INFO] [<REDACTED-GUID>] Queue is not empty. executing extension request.
+[2026-09-26 15:44:38.830] [PID 4156] [TID 1356] [DISPATCHER] [INFO] [<REDACTED-GUID>] Dequeuing extension
+[2026-09-26 15:44:38.830] [PID 4156] [TID 1356] [DISPATCHER] [INFO] [<REDACTED-GUID>] Starting to execute operation with request id : <REDACTED-GUID>
+[2026-09-26 15:44:41.167] [PID 4156] [TID 1356] [EXTMGR] [INFO] [<REDACTED-GUID>] Starting to execute extension request for extension: Microsoft.Azure.Monitor.AzureMonitorWindowsAgent with version: 1.45.0.0 requestID: <REDACTED-GUID>
+[2026-09-26 15:44:41.183] [PID 4156] [TID 1356] [EXTMGR] [ERROR] [<REDACTED-GUID>] [C:\__w\1\s\src\dsc\em_extension_manager\em_ext_mgr_impl.cpp:159] Extension 'Microsoft.Azure.Monitor.AzureMonitorWindowsAgent' failed during download or validation.
+[2026-09-26 15:44:41.183] [PID 4156] [TID 1356] [EXTMGR] [WARNING] [<REDACTED-GUID>] state.json file not found at 'C:\ProgramData\GuestConfig\extension_logs\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\state.json'.
+[2026-09-26 15:44:41.185] [PID 4156] [TID 1356] [EXTMGR] [INFO] [<REDACTED-GUID>] State file doesn't exist yet - Creating one.
+[2026-09-26 15:44:41.208] [PID 4156] [TID 1356] [EXTMGR] [INFO] [<REDACTED-GUID>] Finished processing extension: 'Microsoft.Azure.Monitor.AzureMonitorWindowsAgent'
+[2026-09-26 15:47:04.859] [PID 4156] [TID 4396] [TIMER] [INFO] [<REDACTED-GUID>] [Start] timer trigger for 'extension_refresh_timer'
+[2026-09-26 15:47:04.860] [PID 4156] [TID 4396] [Timer Manager] [INFO] [<REDACTED-GUID>] Run pull refresh for timer 'extension_refresh_timer'
+[2026-09-26 15:47:04.866] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Initializing pull client.
+[2026-09-26 15:47:09.638] [PID 4156] [TID 4396] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Resouce Id from get_vm_resource_id - subscriptions/<REDACTED-GUID>/resourceGroups/rg-soc-lab/providers/Microsoft.HybridCompute/machines/DC01
+[2026-09-26 15:47:10.814] [PID 4156] [TID 4396] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Getting msi info from public region for vm located in 'centralindia' location.
+[2026-09-26 15:47:11.446] [PID 4156] [TID 4396] [METADATA_INFO] [INFO] [<REDACTED-GUID>] Getting the key for access token from file: C:\ProgramData\AzureConnectedMachineAgent\Tokens\<REDACTED-GUID>.key
+[2026-09-26 15:47:12.015] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] [GAS IPs: Public IPv4: 172.202.64.10 Public IPv4: 172.202.65.10]
+[2026-09-26 15:47:16.168] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] [GAS IPs: Public IPv4: 172.202.64.10 Public IPv4: 172.202.65.10] invoke_agent_service_request return_code = 200
+[2026-09-26 15:47:16.746] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Received '1' extensions.
+[2026-09-26 15:47:16.768] [PID 4156] [TID 4396] [EXTMGR] [INFO] [<REDACTED-GUID>] Reading state file from: C:\ProgramData\GuestConfig\extension_logs\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\state.json
+[2026-09-26 15:47:17.351] [PID 4156] [TID 4396] [DISPATCHER] [INFO] [<REDACTED-GUID>] New extension 'AzureMonitorWindowsAgent' - Downloading and validating extension package, validating the token
+[2026-09-26 15:47:17.362] [PID 4156] [TID 4396] [DISPATCHER] [INFO] [<REDACTED-GUID>] The token is not empty.
+[2026-09-26 15:47:19.717] [PID 4156] [TID 4396] [TOKEN_VALIDATOR] [INFO] [<REDACTED-GUID>] Libvalidator can_execute returned: True. Validator check not required
+[2026-09-26 15:47:19.719] [PID 4156] [TID 4396] [TOKEN_VALIDATOR] [INFO] [<REDACTED-GUID>] Token is validated.
+[2026-09-26 15:47:19.719] [PID 4156] [TID 4396] [DISPATCHER] [INFO] [<REDACTED-GUID>] The token has been checked and it is valid
+[2026-09-26 15:47:19.719] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Downloading and validating extension package for extension : Microsoft.Azure.Monitor.AzureMonitorWindowsAgent
+[2026-09-26 15:47:19.755] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Delivery Optimization check for extension Microsoft.Azure.Monitor.AzureMonitorWindowsAgent: enabled=false do_profile_present=true os_available=true uri_present=true
+[2026-09-26 15:47:19.755] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] DoProfile for extension Microsoft.Azure.Monitor.AzureMonitorWindowsAgent: package.url=http://azurearc.b.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>?<REDACTED-QUERY> package.catalogId=z_G8uPQJpz9yTWooxQDs0Txq0gyvyKNDSTH7zzMDUd8= package.piecesHashFileUrl=http://azurearc.f.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>/pieceshash package.hashOfHashes=7denV4aELDoNJJxi3ZhxznevAbShDJQTxmzxc8T+vSY= signature.url=http://azurearc.b.tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>?<REDACTED-QUERY> signature.catalogId=ol2lIWqEOCCtsDmCcXW4WmCnqVJNFRIzojBkQcmCITM= signature.piecesHashFileUrl=http://azurearc.f.dl.delivery.mp.microsoft.com/filestreamingservice/files/<REDACTED-GUID>/pieceshash signature.hashOfHashes=sGJ+4ob49PjIyq5Eix7ns0UOKKVOtT8pDMaxqB0KZx4=
+[2026-09-26 15:47:20.317] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] VM not in PrivateLink Downloading package from URI: https://pn.his.arc.azure.com/extensions/extensionpackages/microsoft.azure.monitor__azuremonitorwindowsagent/microsoft.azure.monitor__azuremonitorwindowsagent__1.45.0.0.zip.
+[2026-09-26 15:47:20.317] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Downloading package to C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip location from https://pn.his.arc.azure.com/extensions/extensionpackages/microsoft.azure.monitor__azuremonitorwindowsagent/microsoft.azure.monitor__azuremonitorwindowsagent__1.45.0.0.zip uri.
+[2026-09-26 15:53:33.476] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Successfully downloaded extension from https://pn.his.arc.azure.com/extensions/extensionpackages/microsoft.azure.monitor__azuremonitorwindowsagent/microsoft.azure.monitor__azuremonitorwindowsagent__1.45.0.0.zip.
+[2026-09-26 15:53:37.644] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Validating the extension package
+[2026-09-26 15:53:40.610] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] CMS signature validation result: CMS signature enforcement enabled: false. Encoded Signature was empty.
+[2026-09-26 15:53:40.611] [PID 4156] [TID 4396] [Pull Client] [INFO] [<REDACTED-GUID>] Unzipping extension package C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0.zip to C:\ProgramData\GuestConfig\downloads\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent1.45.0.0 location.
+[2026-09-26 15:57:17.887] [PID 4156] [TID 2352] [TIMER] [INFO] [<REDACTED-GUID>] [Start] timer trigger for 'extension_reporting_timer'
+PS C:\Users\Administrator>

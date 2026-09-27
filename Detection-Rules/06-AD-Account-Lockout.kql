@@ -1,0 +1,26 @@
+let ingestion_delay = 10m;
+let rule_frequency = 5m;
+SecurityEvent
+| where TimeGenerated >= ago(ingestion_delay + rule_frequency)
+| where ingestion_time() > ago(rule_frequency)
+| where Computer == "DC01.corp.local"
+| where EventID == 4740
+| extend
+    LockedUser = iff(
+        isempty(TargetUserName),
+        tostring(split(TargetAccount, "\\")[1]),
+        TargetUserName
+    ),
+    CallerComputer = coalesce(
+        tostring(column_ifexists("WorkstationName", "")),
+        tostring(column_ifexists("Workstation", "")),
+        TargetDomainName
+    )
+| project
+    TimeGenerated,
+    Computer,
+    EventID,
+    LockedUser,
+    TargetAccount,
+    CallerComputer,
+    Activity
