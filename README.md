@@ -341,16 +341,32 @@ Event
 
 ## Repository Structure
 
-```text
 Enterprise-SOC-Lab/
 │
 ├── README.md
+├── LICENSE
 ├── SECURITY-NOTES.md
+├── PROJECT-STATUS.md
+├── GITHUB-POSTING-GUIDE.md
 │
 ├── Architecture/
 │   ├── Enterprise-SOC-Architecture.png
 │   ├── Enterprise-SOC-Architecture-Dark.png
 │   └── Architecture-Explanation.md
+│
+├── Automation/
+│   └── PowerShell-Incident-Automation.md
+│
+├── Commands/
+│   └── Complete-Command-Reference.md
+│
+├── Detection-Rules/
+│   ├── 01-Repeated-Failed-Logons.kql
+│   ├── 02-New-AD-User-Created.kql
+│   ├── 03-Privileged-AD-Group-Change.kql
+│   ├── 04-Suspicious-PowerShell.kql
+│   ├── 05-Registry-Run-Key-Persistence.kql
+│   └── 06-AD-Account-Lockout.kql
 │
 ├── Documentation/
 │   ├── 01-Project-Overview.md
@@ -362,13 +378,15 @@ Enterprise-SOC-Lab/
 │   ├── 07-SOAR-Automation.md
 │   └── 08-Troubleshooting-and-Lessons.md
 │
-├── Detection-Rules/
-│   ├── 01-Repeated-Failed-Logons.kql
-│   ├── 02-New-AD-User-Created.kql
-│   ├── 03-Privileged-AD-Group-Change.kql
-│   ├── 04-Suspicious-PowerShell.kql
-│   ├── 05-Registry-Run-Key-Persistence.kql
-│   └── 06-AD-Account-Lockout.kql
+├── Evidence/
+│   └── Command-Outputs/
+│
+├── Incident-Reports/
+│   ├── 01-New-AD-User-Incident.md
+│   ├── 02-Privileged-Group-Incident.md
+│   ├── 03-Registry-Persistence-Incident.md
+│   ├── 04-Account-Lockout-Incident.md
+│   └── 05-PowerShell-SOAR-Incident.md
 │
 ├── KQL/
 │   ├── 01-Failed-Logon-Hunt.kql
@@ -380,38 +398,20 @@ Enterprise-SOC-Lab/
 ├── MITRE-ATTACK/
 │   └── MITRE-ATTACK-Mapping.md
 │
-├── Incident-Reports/
-│   ├── 01-New-AD-User-Incident.md
-│   ├── 02-Privileged-Group-Incident.md
-│   ├── 03-Registry-Persistence-Incident.md
-│   ├── 04-Account-Lockout-Incident.md
-│   └── 05-PowerShell-SOAR-Incident.md
-│
-├── Automation/
-│   └── PowerShell-Incident-Automation.md
-│
-├── Commands/
-│   └── Complete-Command-Reference.md
-│
-├── Screenshots/
-│   ├── All-Evidence/
-│   ├── 01-Azure-Foundation.md
-│   ├── 02-Azure-Arc.md
-│   ├── 03-Azure-Monitor-AMA-DCR.md
-│   ├── 04-SecurityEvent-KQL.md
-│   ├── 05-Sysmon.md
-│   ├── 06-Detection-Rules.md
-│   ├── 07-Incidents-Investigation.md
-│   ├── 08-Response-Containment.md
-│   ├── 09-Threat-Hunting.md
-│   ├── 10-SOAR-Automation.md
-│   ├── 11-Troubleshooting.md
-│   └── 12-Security-Cleanup.md
-│
-├── GITHUB-POSTING-GUIDE.md
-├── PROJECT-STATUS.md
-└── SECURITY-NOTES.md
-```
+└── Screenshots/
+    ├── All-Evidence/
+    ├── 01-Azure-Foundation.md
+    ├── 02-Azure-Arc.md
+    ├── 03-Azure-Monitor-AMA-DCR.md
+    ├── 04-SecurityEvent-KQL.md
+    ├── 05-Sysmon.md
+    ├── 06-Detection-Rules.md
+    ├── 07-Incidents-Investigation.md
+    ├── 08-Response-Containment.md
+    ├── 09-Threat-Hunting.md
+    ├── 10-SOAR-Automation.md
+    ├── 11-Troubleshooting.md
+    └── 12-Security-Cleanup.md
 
 ---
 
