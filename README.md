@@ -414,6 +414,7 @@ Enterprise-SOC-Lab/
     ├── 11-Troubleshooting.md
     └── 12-Security-Cleanup.md
 
+```
 ---
 
 ## Documentation
